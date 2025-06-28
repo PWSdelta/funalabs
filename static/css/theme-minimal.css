@@ -1,0 +1,398 @@
+/* Modern Minimal Theme - Clean grays, forest green accents, geometric */
+.theme-minimal {
+    --color-primary: #2D5A3D;
+    --color-primary-light: #4A7C59;
+    --color-primary-dark: #1A3D28;
+    --color-secondary: #F4F6F5;
+    --color-accent: #5B9C6B;
+    
+    --color-background: #FAFBFA;
+    --color-surface: #FFFFFF;
+    --color-text-primary: #1A1D1A;
+    --color-text-secondary: #4A5249;
+    --color-text-muted: #7A8479;
+    
+    --color-success: #228B22;
+    --color-warning: #FF8C00;
+    --color-error: #DC143C;
+    
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+/* Theme Switcher */
+.theme-minimal .theme-btn {
+    color: var(--color-text-secondary);
+}
+
+.theme-minimal .theme-btn.active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Navigation */
+.theme-minimal .navbar {
+    background: rgba(250, 251, 250, 0.95);
+    border-bottom: 1px solid rgba(45, 90, 61, 0.1);
+}
+
+.theme-minimal .nav-brand h2 {
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+.theme-minimal .nav-brand .tagline {
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+.theme-minimal .nav-links a {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.theme-minimal .nav-links a:hover {
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+}
+
+.theme-minimal .whatsapp-nav {
+    background: #25D366;
+    color: white;
+}
+
+.theme-minimal .whatsapp-nav:hover {
+    background: #20BA5A;
+    transform: translateY(-1px);
+}
+
+/* Buttons */
+.theme-minimal .btn-primary {
+    background: var(--color-primary);
+    color: white;
+    border: 2px solid var(--color-primary);
+}
+
+.theme-minimal .btn-primary:hover {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+
+.theme-minimal .btn-secondary {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.theme-minimal .btn-secondary:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Hero Section */
+.theme-minimal .hero {
+    background: linear-gradient(135deg, #FAFBFA 0%, #F4F6F5 100%);
+    position: relative;
+}
+
+.theme-minimal .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(90deg, rgba(45, 90, 61, 0.02) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(45, 90, 61, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.theme-minimal .hero-title {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.theme-minimal .hero-title .accent {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.theme-minimal .example-item {
+    background: white;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 8px rgba(45, 90, 61, 0.05);
+}
+
+.theme-minimal .example-item:hover {
+    border-color: var(--color-primary-light);
+    box-shadow: 0 4px 16px rgba(45, 90, 61, 0.1);
+}
+
+.theme-minimal .example-item i {
+    color: var(--color-primary);
+}
+
+/* Minimal Visual Elements */
+.minimal-grid {
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+
+.minimal-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, var(--color-primary) 2px, transparent 2px),
+        linear-gradient(0deg, var(--color-primary) 2px, transparent 2px);
+    background-size: 80px 80px;
+    opacity: 0.2;
+    animation: gridShift 8s ease-in-out infinite;
+}
+
+.minimal-grid::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: var(--color-primary);
+    opacity: 0.1;
+    animation: rotate 12s linear infinite;
+}
+
+@keyframes gridShift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, 10px); }
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Services Section */
+.theme-minimal .service-card {
+    background: white;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.theme-minimal .service-card:hover {
+    border-color: var(--color-primary-light);
+    transform: translateY(-4px);
+}
+
+.theme-minimal .service-icon {
+    background: var(--color-primary);
+    color: white;
+}
+
+.theme-minimal .service-features li::before {
+    color: var(--color-success);
+}
+
+/* About Section */
+.theme-minimal .about {
+    background: var(--color-secondary);
+}
+
+.theme-minimal .highlight i {
+    background: var(--color-primary);
+    color: white;
+}
+
+.theme-minimal .stat-card {
+    background: white;
+    border: 2px solid var(--color-secondary);
+}
+
+.theme-minimal .stat-number {
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+/* Portfolio Section */
+.theme-minimal .project-card {
+    background: white;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.theme-minimal .project-card:hover {
+    border-color: var(--color-primary-light);
+}
+
+.theme-minimal .project-status {
+    background: var(--color-accent);
+    color: white;
+    font-weight: 600;
+}
+
+.theme-minimal .tech-tag {
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-primary-light);
+    font-weight: 500;
+}
+
+/* Contact Section */
+.theme-minimal .contact {
+    background: linear-gradient(135deg, #FAFBFA 0%, #F4F6F5 100%);
+}
+
+.theme-minimal .contact-method i {
+    background: var(--color-primary);
+    color: white;
+}
+
+.theme-minimal .contact-form {
+    background: white;
+    border: 2px solid var(--color-secondary);
+}
+
+.theme-minimal .form-group input,
+.theme-minimal .form-group select,
+.theme-minimal .form-group textarea {
+    background: white;
+    border-color: rgba(45, 90, 61, 0.2);
+    color: var(--color-text-primary);
+    font-weight: 400;
+}
+
+.theme-minimal .form-group input:focus,
+.theme-minimal .form-group select:focus,
+.theme-minimal .form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.1);
+}
+
+.theme-minimal .form-message.success {
+    background: #F0FFF0;
+    color: var(--color-success);
+    border: 2px solid var(--color-success);
+}
+
+.theme-minimal .form-message.error {
+    background: #FFF0F0;
+    color: var(--color-error);
+    border: 2px solid var(--color-error);
+}
+
+/* WhatsApp Section */
+.theme-minimal .whatsapp-section {
+    background: var(--color-secondary);
+}
+
+.theme-minimal .whatsapp-button {
+    background: #25D366;
+    color: white;
+    font-weight: 600;
+}
+
+.theme-minimal .whatsapp-button:hover {
+    background: #20BA5A;
+}
+
+/* Footer */
+.theme-minimal .footer {
+    background: var(--color-surface);
+    border-top: 2px solid var(--color-secondary);
+}
+
+.theme-minimal .footer-brand h3 {
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+.theme-minimal .footer-links a {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.theme-minimal .footer-links a:hover {
+    color: var(--color-primary);
+}
+
+/* Minimal-specific geometric effects */
+.theme-minimal .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--color-primary);
+    transition: height 0.3s ease;
+}
+
+.theme-minimal .service-card:hover::before {
+    height: 100%;
+}
+
+.theme-minimal .project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 4px;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.theme-minimal .project-card:hover::after {
+    width: 100%;
+}
+
+/* Minimal typography */
+.theme-minimal h1,
+.theme-minimal h2,
+.theme-minimal h3,
+.theme-minimal h4,
+.theme-minimal h5,
+.theme-minimal h6 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.theme-minimal .section-header h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-minimal .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+}
+
+/* Minimal scrollbar */
+.theme-minimal ::-webkit-scrollbar {
+    width: 6px;
+}
+
+.theme-minimal ::-webkit-scrollbar-track {
+    background: var(--color-secondary);
+}
+
+.theme-minimal ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 0;
+}
+
+.theme-minimal ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+}

@@ -1,0 +1,410 @@
+/* Warm Professional Theme - Sand/tan base, olive green, inviting earth tones */
+.theme-warm {
+    --color-primary: #6B8E23;
+    --color-primary-light: #8FBC8F;
+    --color-primary-dark: #556B2F;
+    --color-secondary: #F5F0E8;
+    --color-accent: #DEB887;
+    
+    --color-background: #FDF8F0;
+    --color-surface: #FFFEF9;
+    --color-text-primary: #3D2F1F;
+    --color-text-secondary: #5D4E3A;
+    --color-text-muted: #8B7355;
+    
+    --color-success: #6B8E23;
+    --color-warning: #DAA520;
+    --color-error: #A0522D;
+    
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+/* Theme Switcher */
+.theme-warm .theme-btn {
+    color: var(--color-text-secondary);
+}
+
+.theme-warm .theme-btn.active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Navigation */
+.theme-warm .navbar {
+    background: rgba(253, 248, 240, 0.95);
+    border-bottom: 1px solid rgba(107, 142, 35, 0.1);
+}
+
+.theme-warm .nav-brand h2 {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+
+.theme-warm .nav-brand .tagline {
+    color: var(--color-text-muted);
+}
+
+.theme-warm .nav-links a {
+    color: var(--color-text-secondary);
+}
+
+.theme-warm .nav-links a:hover {
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+}
+
+.theme-warm .whatsapp-nav {
+    background: #25D366;
+    color: white;
+}
+
+.theme-warm .whatsapp-nav:hover {
+    background: #20BA5A;
+    transform: translateY(-1px);
+}
+
+/* Buttons */
+.theme-warm .btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(107, 142, 35, 0.3);
+}
+
+.theme-warm .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    box-shadow: 0 6px 16px rgba(107, 142, 35, 0.4);
+}
+
+.theme-warm .btn-secondary {
+    background: var(--color-accent);
+    color: var(--color-primary-dark);
+    border: 2px solid var(--color-accent);
+}
+
+.theme-warm .btn-secondary:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* Hero Section */
+.theme-warm .hero {
+    background: linear-gradient(135deg, #FDF8F0 0%, #F5F0E8 50%, #F0E6D2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-warm .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(222, 184, 135, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(107, 142, 35, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.theme-warm .hero-title {
+    font-weight: 600;
+}
+
+.theme-warm .hero-title .accent {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.theme-warm .example-item {
+    background: rgba(255, 254, 249, 0.9);
+    border: 1px solid rgba(222, 184, 135, 0.3);
+    box-shadow: 0 2px 8px rgba(107, 142, 35, 0.1);
+}
+
+.theme-warm .example-item:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(107, 142, 35, 0.2);
+}
+
+.theme-warm .example-item i {
+    color: var(--color-primary);
+}
+
+/* Warm Visual Elements */
+.warm-waves {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.warm-waves::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(222, 184, 135, 0.3) 0%, rgba(107, 142, 35, 0.1) 70%, transparent 100%);
+    border-radius: 50%;
+    animation: wave1 4s ease-in-out infinite;
+}
+
+.warm-waves::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(107, 142, 35, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: wave2 6s ease-in-out infinite reverse;
+}
+
+@keyframes wave1 {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+}
+
+@keyframes wave2 {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
+    50% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.4; }
+}
+
+/* Services Section */
+.theme-warm .service-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(222, 184, 135, 0.2);
+    box-shadow: 0 4px 16px rgba(107, 142, 35, 0.1);
+}
+
+.theme-warm .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 32px rgba(107, 142, 35, 0.2);
+    border-color: var(--color-accent);
+}
+
+.theme-warm .service-icon {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
+    color: var(--color-primary-dark);
+}
+
+.theme-warm .service-features li::before {
+    color: var(--color-success);
+}
+
+/* About Section */
+.theme-warm .about {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #F0E6D2 100%);
+}
+
+.theme-warm .highlight i {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: white;
+}
+
+.theme-warm .stat-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(222, 184, 135, 0.3);
+    box-shadow: 0 4px 16px rgba(107, 142, 35, 0.1);
+}
+
+.theme-warm .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 142, 35, 0.15);
+}
+
+.theme-warm .stat-number {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* Portfolio Section */
+.theme-warm .project-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(222, 184, 135, 0.2);
+    box-shadow: 0 4px 16px rgba(107, 142, 35, 0.1);
+}
+
+.theme-warm .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(107, 142, 35, 0.2);
+    border-color: var(--color-accent);
+}
+
+.theme-warm .project-status {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+
+.theme-warm .tech-tag {
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-accent);
+}
+
+/* Contact Section */
+.theme-warm .contact {
+    background: linear-gradient(135deg, #FDF8F0 0%, #F5F0E8 100%);
+}
+
+.theme-warm .contact-method i {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: white;
+}
+
+.theme-warm .contact-form {
+    background: var(--color-surface);
+    border: 1px solid rgba(222, 184, 135, 0.3);
+    box-shadow: 0 8px 32px rgba(107, 142, 35, 0.15);
+}
+
+.theme-warm .form-group input,
+.theme-warm .form-group select,
+.theme-warm .form-group textarea {
+    background: #FFFEF9;
+    border-color: rgba(222, 184, 135, 0.4);
+    color: var(--color-text-primary);
+}
+
+.theme-warm .form-group input:focus,
+.theme-warm .form-group select:focus,
+.theme-warm .form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.1);
+    background: white;
+}
+
+.theme-warm .form-message.success {
+    background: linear-gradient(135deg, #F0F8E8, #E8F5E8);
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
+}
+
+.theme-warm .form-message.error {
+    background: linear-gradient(135deg, #FDF5F0, #FBE8E0);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+/* WhatsApp Section */
+.theme-warm .whatsapp-section {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #F0E6D2 100%);
+}
+
+.theme-warm .whatsapp-button {
+    background: linear-gradient(135deg, #25D366, #20BA5A);
+    color: white;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+}
+
+.theme-warm .whatsapp-button:hover {
+    background: linear-gradient(135deg, #20BA5A, #1DA851);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Footer */
+.theme-warm .footer {
+    background: var(--color-surface);
+    border-top: 1px solid rgba(222, 184, 135, 0.3);
+}
+
+.theme-warm .footer-brand h3 {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+
+.theme-warm .footer-links a {
+    color: var(--color-text-secondary);
+}
+
+.theme-warm .footer-links a:hover {
+    color: var(--color-primary);
+}
+
+/* Warm-specific texture effects */
+.theme-warm .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 49%, rgba(222, 184, 135, 0.1) 50%, transparent 51%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.theme-warm .service-card:hover::before {
+    opacity: 1;
+}
+
+.theme-warm .project-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--color-accent), var(--color-primary), var(--color-accent));
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.theme-warm .project-card:hover::after {
+    opacity: 0.3;
+}
+
+/* Warm section dividers */
+.theme-warm .section-header::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-primary), var(--color-accent));
+    margin: var(--spacing-md) auto 0;
+    border-radius: 2px;
+}
+
+/* Warm scrollbar */
+.theme-warm ::-webkit-scrollbar {
+    width: 10px;
+}
+
+.theme-warm ::-webkit-scrollbar-track {
+    background: var(--color-secondary);
+    border-radius: 5px;
+}
+
+.theme-warm ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    border-radius: 5px;
+}
+
+.theme-warm ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+}
+
+/* Warm typography enhancements */
+.theme-warm h1,
+.theme-warm h2,
+.theme-warm h3 {
+    text-shadow: 0 1px 2px rgba(107, 142, 35, 0.1);
+}
+
+.theme-warm .hero-subtitle {
+    text-shadow: 0 1px 2px rgba(61, 47, 31, 0.1);
+}

@@ -1,0 +1,25 @@
+# Funa Labs Consulting Website Dependencies
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# Optional database support (for future implementation)
+# Uncomment when ready to add database functionality
+# SQLAlchemy==2.0.23
+# Flask-SQLAlchemy==3.1.1
+# Flask-Migrate==4.0.5
+
+# Optional form handling enhancements
+# Flask-WTF==1.2.1
+# WTForms==3.1.1
+
+# Optional email support (for contact form notifications)
+# Flask-Mail==0.9.1
+
+# Optional environment variable management
+python-dotenv==1.0.0
+
+# Optional production server
+# gunicorn==21.2.0
+
+# Optional for analytics/monitoring (future)
+# Flask-Analytics==0.6.0

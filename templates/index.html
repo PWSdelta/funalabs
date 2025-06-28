@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if theme == 'zen' %}Funa Labs - Thoughtful Tech Solutions{% elif theme == 'minimal' %}Funa Labs - Strategic Technology Consulting{% else %}Funa Labs - Your Trusted Tech Partner{% endif %}</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Theme-specific CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme-' + theme + '.css') }}">
+    
+    <meta name="description" content="Funa Labs provides fractional CTO services, NetSuite administration, ecommerce consulting, and full-stack development for small businesses.">
+    <meta name="keywords" content="fractional CTO, NetSuite, ecommerce consulting, MVP development, full-stack development, technology consulting">
+</head>
+<body class="theme-{{ theme }}">    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>Funa Labs</h2>
+                <span class="tagline">Your CTO in a Box</span>
+            </div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Work Together</a>
+                <a href="https://wa.me/+19132189162?text=Hi!%20I'm%20interested%20in%20consulting%20services.%20Here%20are%20my%20key%20questions:%0A%0A1.%20What's%20your%20typical%20project%20timeline%20and%20pricing%20structure?%0A2.%20How%20do%20you%20approach%20understanding%20our%20specific%20business%20needs?%0A3.%20Can%20you%20help%20with%20[NetSuite/Ecommerce/MVP%20Development/Full-Stack]?%0A%0ACompany:%20[Your%20Company]%0ABrief%20project%20description:%20[Tell%20me%20about%20your%20challenge]%0A%0ALooking%20forward%20to%20hearing%20from%20you!" 
+                   class="whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    {% if theme == 'zen' %}
+                        Thoughtful Technology Solutions<br><span class="accent">for Growing Companies</span>
+                    {% elif theme == 'minimal' %}
+                        Strategic Technology Leadership<br><span class="accent">When You Need It</span>
+                    {% else %}
+                        Your Trusted Technology Partner<br><span class="accent">Every Step of the Way</span>
+                    {% endif %}
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Small companies deserve big-company tech expertise. I'm your fractional CTO—curious, meticulous, 
+                    and dedicated to understanding your unique challenges before proposing solutions.
+                </p>
+                
+                <!-- CTO in a Box Examples -->
+                <div class="cto-examples">
+                    <div class="example-grid">
+                        <div class="example-item">
+                            <i class="fas fa-search"></i>
+                            <span>Need someone to dig deep and ask the right questions?</span>
+                        </div>
+                        <div class="example-item">
+                            <i class="fas fa-cogs"></i>
+                            <span>Looking for operational efficiency and process improvement?</span>
+                        </div>
+                        <div class="example-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>Want to build an MVP without breaking the bank?</span>
+                        </div>
+                        <div class="example-item">
+                            <i class="fas fa-handshake"></i>
+                            <span>Need a tech leader who truly understands your business?</span>
+                        </div>
+                        <div class="example-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Want fast response times and accessible communication?</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+                    <a href="#whatsapp" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i> Quick WhatsApp Chat
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                {% if theme == 'zen' %}
+                    <div class="zen-circle"></div>
+                    <div class="zen-dots"></div>
+                {% elif theme == 'minimal' %}
+                    <div class="minimal-grid"></div>
+                {% else %}
+                    <div class="warm-waves"></div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>How I Can Help</h2>
+                <p>Specialized expertise across the technology stack</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>NetSuite Administration</h3>
+                    <p>Optimize your NetSuite implementation with customizations, integrations, and workflow automation that actually work for your business.</p>
+                    <ul class="service-features">
+                        <li>Custom scripting & workflows</li>
+                        <li>Third-party integrations</li>
+                        <li>Performance optimization</li>
+                        <li>Training & documentation</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Ecommerce Consulting</h3>
+                    <p>Build and scale your online presence with strategic ecommerce solutions that convert visitors into loyal customers.</p>
+                    <ul class="service-features">
+                        <li>Platform selection & setup</li>
+                        <li>Payment gateway integration</li>
+                        <li>Performance optimization</li>
+                        <li>Analytics & conversion tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>MVP Development</h3>
+                    <p>Turn your ideas into reality with lean, focused development that validates your concept without overengineering.</p>
+                    <ul class="service-features">
+                        <li>Rapid prototyping</li>
+                        <li>User feedback integration</li>
+                        <li>Scalable architecture</li>
+                        <li>Launch strategy</li>
+                    </ul>                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>The Curious Problem Solver</h2>
+                    <p class="lead">
+                        With a background in operations management and accounting, I bring a unique analytical mindset 
+                        to technology challenges. My superpower? Curiosity. I ask the questions others miss.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-search"></i>
+                            <div>
+                                <h4>Pattern Recognition</h4>
+                                <p>I see connections and inefficiencies that others overlook, turning complex problems into elegant solutions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h4>Deep Listening</h4>
+                                <p>I dig beneath surface requirements to understand what you really need, even when you're not sure yourself.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight">
+                            <i class="fas fa-cog"></i>
+                            <div>
+                                <h4>Meticulous Execution</h4>
+                                <p>Every detail matters. I build systems that work reliably and scale gracefully with your business.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>Genuine Care</h4>
+                                <p>Your success is my success. I'm not just building software—I'm helping you achieve your vision.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">24hr</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Project Success</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Always</div>
+                        <div class="stat-label">Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+<!--
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Current Projects</h2>
+                <p>Building solutions that make a difference</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>PushupMinder</h3>
+                        <span class="project-status">Deploying</span>
+                    </div>
+                    <p>Smart notification system that builds healthy habits through micro-workouts. SMS and WhatsApp integration for seamless user engagement.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Twilio</span>
+                        <span class="tech-tag">WhatsApp API</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Corporate Fitness Platform</h3>
+                        <span class="project-status">In Development</span>
+                    </div>
+                    <p>Comprehensive wellness solution for companies to track and improve employee health through gamification and social features.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Work Break Reminder</h3>
+                        <span class="project-status">MVP Ready</span>
+                    </div>
+                    <p>Intelligent break scheduling app that prevents burnout by encouraging healthy work patterns and mindful breaks.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Desktop App</span>
+                        <span class="tech-tag">AI Scheduling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Let's Solve Something Together</h2>
+                    <p class="contact-subtitle">
+                        Every great solution starts with understanding the right problem. 
+                        Tell me about your challenge, and let's explore how we can address it.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Response</h4>
+                                <p>Within 24 hours, usually much faster</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp Chat</h4>
+                                <p>For quick questions and real-time communication</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-video"></i>
+                            <div>
+                                <h4>Discovery Call</h4>
+                                <p>Let's dive deep into your specific needs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="challenge">What challenge can we solve together?</label>
+                            <textarea id="challenge" name="challenge" rows="4" placeholder="Tell me about your current situation, goals, or the problem you're facing..." required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="budget">Project Budget</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select range</option>
+                                    <option value="under-5k">Under $5,000</option>
+                                    <option value="5k-15k">$5,000 - $15,000</option>
+                                    <option value="15k-50k">$15,000 - $50,000</option>
+                                    <option value="50k-plus">$50,000+</option>
+                                    <option value="discuss">Let's discuss</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="timeline">Timeline Needed</label>
+                                <select id="timeline" name="timeline">
+                                    <option value="">Select timeline</option>
+                                    <option value="asap">ASAP</option>
+                                    <option value="1-3-months">1-3 months</option>
+                                    <option value="3-6-months">3-6 months</option>
+                                    <option value="6-plus-months">6+ months</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Section -->
+    <section id="whatsapp" class="whatsapp-section">
+        <div class="container">
+            <div class="whatsapp-content">
+                <div class="whatsapp-info">
+                    <h2>Prefer WhatsApp?</h2>
+                    <p>Click below to start a conversation with a pre-filled message covering the most common questions.</p>
+                </div>
+                <a href="https://wa.me/+19132189162?text=Hi!%20I'm%20interested%20in%20consulting%20services.%20Here%20are%20my%20key%20questions:%0A%0A1.%20What's%20your%20typical%20project%20timeline%20and%20pricing%20structure?%0A2.%20How%20do%20you%20approach%20understanding%20our%20specific%20business%20needs?%0A3.%20Can%20you%20help%20with%20[NetSuite/Ecommerce/MVP%20Development/Full-Stack]?%0A%0ACompany:%20[Your%20Company]%0ABrief%20project%20description:%20[Tell%20me%20about%20your%20challenge]%0A%0ALooking%20forward%20to%20hearing%20from%20you!" 
+                   class="whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Open WhatsApp Chat</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Funa Labs</h3>
+                    <p>Your CTO in a Box</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Work Together</a>
+                </div>
+                <div class="footer-contact">
+                    <p>&copy; 2025 Funa Labs. Thoughtfully crafted solutions.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

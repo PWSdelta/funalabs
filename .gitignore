@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env.*
+*.sqlite3
+instance/
+*.db
+
+# VS Code
+.vscode/
+.history/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Flask
+*.log
+
+# Node/npm (if you add frontend tooling)
+node_modules/
+npm-debug.log*
+
+# Misc
+*.bak
+*.swp
+*.swo
+
+# Ignore secrets and credentials
+*.pem
+*.key
+*.crt
+
+# Ignore test output
+coverage/
+htmlcov/
+*.cover
+
+# Ignore compiled assets
+static/dist/

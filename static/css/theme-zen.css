@@ -1,0 +1,346 @@
+/* Zen Garden Theme - Soft greens, cream, nature-inspired */
+.theme-zen {
+    --color-primary: #7C9885;
+    --color-primary-light: #A5C4AD;
+    --color-primary-dark: #5A6F61;
+    --color-secondary: #E8F5E8;
+    --color-accent: #B8D4A0;
+    
+    --color-background: #F8FAF7;
+    --color-surface: #FFFFFF;
+    --color-text-primary: #2D4A32;
+    --color-text-secondary: #4A6B51;
+    --color-text-muted: #7A9681;
+    
+    --color-success: #6B8E23;
+    --color-warning: #DAA520;
+    --color-error: #CD5C5C;
+    
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+/* Theme Switcher */
+.theme-zen .theme-btn {
+    color: var(--color-text-secondary);
+}
+
+.theme-zen .theme-btn.active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Navigation */
+.theme-zen .navbar {
+    background: rgba(248, 250, 247, 0.95);
+    border-bottom: 1px solid rgba(124, 152, 133, 0.1);
+}
+
+.theme-zen .nav-brand h2 {
+    color: var(--color-primary-dark);
+}
+
+.theme-zen .nav-brand .tagline {
+    color: var(--color-text-muted);
+}
+
+.theme-zen .nav-links a {
+    color: var(--color-text-secondary);
+}
+
+.theme-zen .nav-links a:hover {
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+}
+
+.theme-zen .whatsapp-nav {
+    background: #25D366;
+    color: white;
+}
+
+.theme-zen .whatsapp-nav:hover {
+    background: #20BA5A;
+    transform: translateY(-1px);
+}
+
+/* Buttons */
+.theme-zen .btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.theme-zen .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+}
+
+.theme-zen .btn-secondary {
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+    border: 2px solid var(--color-primary-light);
+}
+
+.theme-zen .btn-secondary:hover {
+    background: var(--color-primary-light);
+    color: white;
+}
+
+/* Hero Section */
+.theme-zen .hero {
+    background: linear-gradient(135deg, #F8FAF7 0%, #E8F5E8 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-zen .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(124, 152, 133, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(165, 196, 173, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.theme-zen .hero-title .accent {
+    color: var(--color-primary);
+}
+
+.theme-zen .example-item {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(124, 152, 133, 0.2);
+}
+
+.theme-zen .example-item:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-primary-light);
+}
+
+.theme-zen .example-item i {
+    color: var(--color-primary);
+}
+
+/* Zen Visual Elements */
+.zen-circle {
+    width: 300px;
+    height: 300px;
+    border: 3px solid var(--color-primary-light);
+    border-radius: 50%;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.zen-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.zen-dots {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.zen-dots::before,
+.zen-dots::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.zen-dots::after {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Services Section */
+.theme-zen .service-card {
+    background: white;
+    border: 1px solid rgba(124, 152, 133, 0.1);
+}
+
+.theme-zen .service-icon {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    color: var(--color-primary-dark);
+}
+
+.theme-zen .service-features li::before {
+    color: var(--color-success);
+}
+
+/* About Section */
+.theme-zen .about {
+    background: var(--color-secondary);
+}
+
+.theme-zen .highlight i {
+    background: var(--color-primary);
+    color: white;
+}
+
+.theme-zen .stat-card {
+    background: white;
+    border: 1px solid rgba(124, 152, 133, 0.1);
+}
+
+.theme-zen .stat-number {
+    color: var(--color-primary-dark);
+}
+
+/* Portfolio Section */
+.theme-zen .project-card {
+    background: white;
+    border: 1px solid rgba(124, 152, 133, 0.1);
+}
+
+.theme-zen .project-status {
+    background: var(--color-accent);
+    color: var(--color-primary-dark);
+}
+
+.theme-zen .tech-tag {
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-primary-light);
+}
+
+/* Contact Section */
+.theme-zen .contact {
+    background: linear-gradient(135deg, #F8FAF7 0%, #E8F5E8 100%);
+}
+
+.theme-zen .contact-method i {
+    background: var(--color-primary);
+    color: white;
+}
+
+.theme-zen .contact-form {
+    background: white;
+    border: 1px solid rgba(124, 152, 133, 0.1);
+}
+
+.theme-zen .form-group input,
+.theme-zen .form-group select,
+.theme-zen .form-group textarea {
+    background: #FDFDFD;
+    border-color: rgba(124, 152, 133, 0.2);
+    color: var(--color-text-primary);
+}
+
+.theme-zen .form-group input:focus,
+.theme-zen .form-group select:focus,
+.theme-zen .form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(124, 152, 133, 0.1);
+}
+
+.theme-zen .form-message.success {
+    background: var(--color-secondary);
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
+}
+
+.theme-zen .form-message.error {
+    background: #FFF5F5;
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+/* WhatsApp Section */
+.theme-zen .whatsapp-section {
+    background: var(--color-secondary);
+}
+
+.theme-zen .whatsapp-button {
+    background: #25D366;
+    color: white;
+}
+
+.theme-zen .whatsapp-button:hover {
+    background: #20BA5A;
+}
+
+/* Footer */
+.theme-zen .footer {
+    background: var(--color-surface);
+    border-top-color: rgba(124, 152, 133, 0.2);
+}
+
+.theme-zen .footer-brand h3 {
+    color: var(--color-primary-dark);
+}
+
+.theme-zen .footer-links a {
+    color: var(--color-text-secondary);
+}
+
+.theme-zen .footer-links a:hover {
+    color: var(--color-primary);
+}
+
+/* Zen-specific animations and effects */
+.theme-zen .service-card:hover {
+    box-shadow: 0 8px 32px rgba(124, 152, 133, 0.2);
+    border-color: var(--color-primary-light);
+}
+
+.theme-zen .project-card:hover {
+    box-shadow: 0 6px 24px rgba(124, 152, 133, 0.15);
+    border-color: var(--color-primary-light);
+}
+
+/* Zen decorative elements */
+.theme-zen .section-header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    margin: var(--spacing-md) auto 0;
+    border-radius: 2px;
+}
+
+/* Zen scrollbar */
+.theme-zen ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.theme-zen ::-webkit-scrollbar-track {
+    background: var(--color-secondary);
+}
+
+.theme-zen ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+}
+
+.theme-zen ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+}
