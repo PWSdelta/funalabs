@@ -28,38 +28,38 @@ document.addEventListener('DOMContentLoaded', function() {
         if (contactForm) {
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                
                 // Show loading state
                 const submitButton = contactForm.querySelector('button[type="submit"]');
                 const originalText = submitButton.textContent;
                 submitButton.textContent = 'Sending...';
                 submitButton.disabled = true;
-                
                 try {
                     // Collect form data
                     const formData = new FormData(contactForm);
-                    
                     // Send to backend
                     const response = await fetch('/contact', {
                         method: 'POST',
                         body: formData
                     });
-                    
-                    const result = await response.json();
-                    
-                    // Show success/error message
+                    let result;
+                    try {
+                        result = await response.json();
+                    } catch (jsonError) {
+                        showFormMessage('Server error: Invalid response. Please try again.', 'error');
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                        return;
+                    }
                     if (result.status === 'success') {
                         showFormMessage(result.message, 'success');
                         contactForm.reset();
                     } else {
                         showFormMessage(result.message || 'Something went wrong. Please try again.', 'error');
                     }
-                    
                 } catch (error) {
                     console.error('Form submission error:', error);
                     showFormMessage('Network error. Please check your connection and try again.', 'error');
                 }
-                
                 // Reset button
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
