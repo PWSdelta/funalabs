@@ -44,7 +44,7 @@ def create_app():
         # Send notification to Discord
         send_discord_notification(data)     
 
-        return render_template('index.html', theme=theme)
+        return render_template('index.html')
     
     @app.errorhandler(404)
     def not_found(error):
