@@ -29,18 +29,25 @@ def index():
 
 @app.route('/contact', methods=['POST'])
 def contact():
-    data = {
-        'name': request.form.get('name'),
-        'email': request.form.get('email'),
-        'company': request.form.get('company'),
-        'challenge': request.form.get('challenge'),
-        'budget': request.form.get('budget'),
-        'timeline': request.form.get('timeline')
-    }
-    send_discord_notification(data)
-    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        return jsonify({'status': 'success', 'message': 'Thank you for reaching out! I\'ll get back to you within 24 hours.'})
-    return render_template('index.html', theme='minimal', success=True, data=data)
+    try:
+        data = {
+            'name': request.form.get('name'),
+            'email': request.form.get('email'),
+            'company': request.form.get('company'),
+            'challenge': request.form.get('challenge'),
+            'budget': request.form.get('budget'),
+            'timeline': request.form.get('timeline')
+        }
+        print("Contact form data:", data)  # Debug print
+        send_discord_notification(data)
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return jsonify({'success': 'success', 'message': 'Thank you for reaching out! I\'ll get back to you within 24 hours.'})
+        return render_template('index.html', theme='zen', success='success', data=data)
+    except Exception as e:
+        print("Error in /contact:", e)
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return jsonify({'success': 'error', 'message': f'Server error: {e}'}), 500
+        return render_template('index.html', theme='zen', error=True), 500
 
 @app.errorhandler(404)
 def not_found(error):

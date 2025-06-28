@@ -39,7 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Send to backend
                     const response = await fetch('/contact', {
                         method: 'POST',
-                        body: formData
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
                     });
                     let result;
                     try {
@@ -71,12 +74,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 formMessage.textContent = message;
                 formMessage.className = `form-message ${type}`;
                 formMessage.style.display = 'block';
-                
-                // Auto-hide success messages after 5 seconds
                 if (type === 'success') {
-                    setTimeout(() => {
-                        formMessage.style.display = 'none';
-                    }, 5000);
+                    formMessage.style.background = '#2ecc40'; // Green background
+                    formMessage.style.color = '#fff';
+                    formMessage.style.border = 'none';
+                    formMessage.style.fontWeight = 'bold';
+                } else {
+                    formMessage.style.background = '';
+                    formMessage.style.color = '';
+                    formMessage.style.border = '';
+                    formMessage.style.fontWeight = '';
                 }
             }
         }
