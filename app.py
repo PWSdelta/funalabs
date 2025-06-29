@@ -20,7 +20,7 @@ def send_discord_notification(data):
     requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-key-change-in-production')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'no798lsk4tb4-b4q4iuytgb786ba1shgms938rnu09a8739nf8c74b09a7-7-a3-va3=97t)')
 
 @app.route('/')
 def index():
@@ -49,9 +49,50 @@ def contact():
             return jsonify({'success': 'error', 'message': f'Server error: {e}'}), 500
         return render_template('index.html', theme='zen', error=True), 500
 
+import requests
+@app.route('/status')
+def status():
+    sites = [
+        {'name': 'MTGAbyss', 'url': 'https://MTGAbyss.com'},
+        {'name': 'Funa Labs', 'url': 'https://FunaLabs.com'},
+        {'name': 'DominionAbyss', 'url': 'https://DominionAbyss.com'},
+    ]
+    import ssl, socket, datetime
+    def get_ssl_expiry(hostname):
+        try:
+            ctx = ssl.create_default_context()
+            with ctx.wrap_socket(socket.socket(), server_hostname=hostname) as s:
+                s.settimeout(3)
+                s.connect((hostname, 443))
+                cert = s.getpeercert()
+                expires = datetime.datetime.strptime(cert['notAfter'], '%b %d %H:%M:%S %Y %Z').replace(tzinfo=datetime.timezone.utc)
+                now = datetime.datetime.now(datetime.timezone.utc)
+                days = (expires - now).days
+                return days
+        except Exception as e:
+            return str(e)
+
+    results = []
+    for site in sites:
+        try:
+            resp = requests.head(site['url'], timeout=5)
+            status_code = resp.status_code
+        except Exception as e:
+            status_code = str(e)
+        # Extract hostname for SSL check
+        hostname = site['url'].replace('https://', '').replace('http://', '').split('/')[0]
+        ssl_days_left = get_ssl_expiry(hostname)
+        results.append({
+            'name': site['name'],
+            'url': site['url'],
+            'status': status_code,
+            'ssl_days_left': ssl_days_left
+        })
+    return jsonify(results)
+
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html'), 404
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=1235)
+    app.run(host='0.0.0.0', port=1235)
