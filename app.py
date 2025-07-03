@@ -17,7 +17,10 @@ def send_discord_notification(data):
         f"**Budget:** {data['budget']}\n"
         f"**Timeline:** {data['timeline']}"
     )
-    requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
+
+    print("Sending Discord notification with content:", content)
+    resp = requests.post(DISCORD_WEBHOOK_URL, json={"content": content})
+    print("Discord webhook response:", resp.status_code, resp.text)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'no798lsk4tb4-b4q4iuytgb786ba1shgms938rnu09a8739nf8c74b09a7-7-a3-va3=97t)')
